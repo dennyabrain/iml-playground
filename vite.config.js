@@ -4,7 +4,7 @@ import babel from '@rolldown/plugin-babel'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: process.env.VITE_BASE_URL ?? '/',
+  base: '/iml-playground/',
   plugins: [
     react(),
     babel({ presets: [reactCompilerPreset()] })
