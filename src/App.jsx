@@ -6,7 +6,7 @@ import DecisionTree from './pages/decision-tree'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/unstructured-data-collection" element={<UnstructuredDataCollection />} />
