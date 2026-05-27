@@ -11,6 +11,11 @@ const prototypes = [
     title: 'Tweaking weights of a Linear Model',
     description: `We present user with an interactive visualization of a linear model. The user can modify the weights to see the model prediction update in real time.`,
   },
+  {
+    path: '/decision-tree',
+    title: 'Decision Tree',
+    description: `We present the user with a decision tree model and ask them to move decision steps around.`,
+  },
 ]
 
 export default function Home() {
