@@ -172,6 +172,26 @@ export default function PrototypeTab() {
   return (
     <div className="dt-panel">
 
+      <div className="dt-palette">
+        <span className="dt-palette-heading">Parameters</span>
+        <div className="dt-blocks">
+          {PARAMETERS.map(p => {
+            const used = usedKeys.includes(p.key)
+            return (
+              <div
+                key={p.key}
+                draggable={!used}
+                onDragStart={() => setDragging(p.key)}
+                onDragEnd={() => setDragging(null)}
+                className={`dt-block${used ? ' dt-block--used' : ''}`}
+              >
+                {p.label}
+              </div>
+            )
+          })}
+        </div>
+      </div>
+
       <div className="dt-steps">
         {steps.map((step, i) => (
           <Fragment key={i}>
@@ -203,30 +223,24 @@ export default function PrototypeTab() {
                   <span className="dt-hint">drop here</span>
                 )}
               </div>
+              <div className="dt-no-branch">
+                <span className="dt-no-arrow">↓</span>
+                <span className="dt-no-label">if no</span>
+              </div>
             </div>
-            {i < 4 && <span className="dt-arrow">→</span>}
+            <div className="dt-yes-arrow">
+              <span className="dt-yes-label">if yes</span>
+              <span className="dt-yes-sym">→</span>
+            </div>
           </Fragment>
         ))}
+        <div className="dt-approved">
+          patient gets<br />approved
+        </div>
       </div>
 
-      <div className="dt-palette">
-        <span className="dt-palette-heading">Parameters</span>
-        <div className="dt-blocks">
-          {PARAMETERS.map(p => {
-            const used = usedKeys.includes(p.key)
-            return (
-              <div
-                key={p.key}
-                draggable={!used}
-                onDragStart={() => setDragging(p.key)}
-                onDragEnd={() => setDragging(null)}
-                className={`dt-block${used ? ' dt-block--used' : ''}`}
-              >
-                {p.label}
-              </div>
-            )
-          })}
-        </div>
+      <div className="dt-rejected">
+        patient gets rejected
       </div>
 
     </div>
