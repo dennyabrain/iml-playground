@@ -1,0 +1,200 @@
+/* ── layout ──────────────────────────────────────────────── */
+
+.dt-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.dt-steps {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.dt-step-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.dt-arrow {
+  font-size: 12px;
+  color: #c0c0c0;
+  padding: 0 8px;
+  margin-top: 20px; /* align with box, not step number */
+  flex-shrink: 0;
+  user-select: none;
+}
+
+/* ── step number ─────────────────────────────────────────── */
+
+.dt-step-num {
+  font-size: 11px;
+  font-weight: 400;
+  color: #b0b0b0;
+  letter-spacing: 0.04em;
+  user-select: none;
+}
+
+/* ── step box ────────────────────────────────────────────── */
+
+.dt-step {
+  width: 110px;
+  height: 100px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dt-step--empty {
+  border: 1px dashed #d0d0d0;
+}
+
+.dt-step--filled {
+  border: 1px solid #1a1a1a;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 10px 10px 8px;
+}
+
+.dt-step--over {
+  border-color: #888;
+  background: #fafafa;
+}
+
+.dt-hint {
+  font-size: 11px;
+  color: #c8c8c8;
+  user-select: none;
+}
+
+/* ── filled step content ─────────────────────────────────── */
+
+.dt-clear {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  color: #b0b0b0;
+  padding: 0;
+  line-height: 1;
+  font-family: var(--font);
+}
+.dt-clear:hover {
+  color: #1a1a1a;
+}
+
+.dt-step-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: #1a1a1a;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.dt-threshold {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dt-operator {
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #d0d0d0;
+  font-size: 12px;
+  font-family: var(--font);
+  color: #1a1a1a;
+  cursor: pointer;
+  width: 28px;
+  padding: 2px 2px;
+  text-align: center;
+  outline: none;
+}
+.dt-operator:focus {
+  border-bottom-color: #1a1a1a;
+}
+
+.dt-threshold-input {
+  width: 40px;
+  border: none;
+  border-bottom: 1px solid #d0d0d0;
+  background: none;
+  font-size: 12px;
+  font-family: ui-monospace, monospace;
+  color: #1a1a1a;
+  padding: 2px 2px;
+  outline: none;
+}
+.dt-threshold-input:focus {
+  border-bottom-color: #1a1a1a;
+}
+.dt-threshold-input::-webkit-outer-spin-button,
+.dt-threshold-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.dt-outcome {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.dt-yes,
+.dt-no {
+  font-size: 10px;
+  letter-spacing: 0.02em;
+}
+.dt-yes { color: #1a1a1a; font-weight: 500; }
+.dt-no  { color: #b0b0b0; }
+
+/* ── palette ─────────────────────────────────────────────── */
+
+.dt-palette {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dt-palette-heading {
+  font-size: 11px;
+  font-weight: 400;
+  color: #b0b0b0;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.dt-blocks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dt-block {
+  border: 1px solid #1a1a1a;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #1a1a1a;
+  cursor: grab;
+  user-select: none;
+}
+.dt-block:active {
+  cursor: grabbing;
+}
+
+.dt-block--used {
+  border-color: #e0e0e0;
+  color: #c0c0c0;
+  cursor: default;
+}
