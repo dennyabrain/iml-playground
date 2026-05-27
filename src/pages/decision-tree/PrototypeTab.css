@@ -41,7 +41,7 @@
 /* ── step box ────────────────────────────────────────────── */
 
 .dt-step {
-  width: 110px;
+  width: 150px;
   height: 100px;
   box-sizing: border-box;
   position: relative;
@@ -126,7 +126,7 @@
 }
 
 .dt-threshold-input {
-  width: 40px;
+  width: 60px;
   border: none;
   border-bottom: 1px solid #d0d0d0;
   background: none;
@@ -144,19 +144,75 @@
   -webkit-appearance: none;
 }
 
-.dt-outcome {
-  display: flex;
-  gap: 8px;
-  margin-top: 8px;
+/* ── boolean input ───────────────────────────────────────── */
+
+.dt-op-fixed {
+  font-size: 12px;
+  color: #b0b0b0;
+  width: 28px;
+  text-align: center;
+  flex-shrink: 0;
 }
 
-.dt-yes,
-.dt-no {
-  font-size: 10px;
-  letter-spacing: 0.02em;
+.dt-bool-select {
+  width: auto;
+  flex: 1;
 }
-.dt-yes { color: #1a1a1a; font-weight: 500; }
-.dt-no  { color: #b0b0b0; }
+
+/* ── multiselect ─────────────────────────────────────────── */
+
+.dt-multiselect {
+  position: relative;
+  width: 100%;
+}
+
+.dt-multiselect-btn {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #d0d0d0;
+  font-size: 11px;
+  font-family: var(--font);
+  color: #1a1a1a;
+  cursor: pointer;
+  padding: 2px 0;
+  width: 100%;
+  text-align: left;
+  outline: none;
+}
+.dt-multiselect-btn:focus {
+  border-bottom-color: #1a1a1a;
+}
+
+.dt-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: -10px;
+  background: #fff;
+  border: 1px solid #1a1a1a;
+  padding: 8px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 180px;
+}
+
+.dt-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #1a1a1a;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dt-dropdown-item input[type='checkbox'] {
+  accent-color: #1a1a1a;
+  width: 11px;
+  height: 11px;
+  flex-shrink: 0;
+}
 
 /* ── palette ─────────────────────────────────────────────── */
 
