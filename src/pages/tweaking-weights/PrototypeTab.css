@@ -2,21 +2,134 @@
   --accent: #e8501a;
 }
 
+/* ── layout ──────────────────────────────────────────────── */
+
+.tw-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.tw-col {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ── sections ────────────────────────────────────────────── */
+
+.tw-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tw-section-label {
+  font-size: 11px;
+  font-weight: 400;
+  color: #b0b0b0;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ── patient fields ──────────────────────────────────────── */
+
+.tw-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin: 0;
+}
+
+.tw-field {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.tw-field dt {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.tw-field dd {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0;
+  text-align: right;
+}
+
+/* ── prediction ──────────────────────────────────────────── */
+
+.tw-prediction {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.tw-prediction--true  { color: #1a1a1a; }
+.tw-prediction--false { color: #f70505; }
+
+.tw-probability {
+  font-size: 11px;
+  font-weight: 400;
+  color: #b0b0b0;
+  margin: 0;
+}
+
+/* ── verdict buttons ─────────────────────────────────────── */
+
+.tw-verdict {
+  display: flex;
+  gap: 8px;
+}
+
+.tw-btn {
+  appearance: none;
+  background: none;
+  border: 1px solid #1a1a1a;
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 400;
+  color: #1a1a1a;
+  padding: 7px 16px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+.tw-btn:hover     { background: #1a1a1a; color: #fff; }
+.tw-btn--active   { background: #1a1a1a; color: #fff; }
+
+/* ── custom result block ─────────────────────────────────── */
+
+.tw-custom-result {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 4px;
+}
+
+/* ── sliders ─────────────────────────────────────────────── */
+
 .weights-panel {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  max-width: 640px;
+  gap: 16px;
 }
 
 .weight-row {
   display: grid;
-  grid-template-columns: 240px 1fr 52px;
-  align-items: center;
-  gap: 20px;
+  grid-template-columns: 1fr 52px;
+  grid-template-rows: auto auto;
+  row-gap: 6px;
+  column-gap: 12px;
 }
 
 .weight-label {
+  grid-column: 1 / -1;
   font-size: 12px;
   font-weight: 400;
   color: var(--text-secondary);
@@ -30,13 +143,11 @@
   letter-spacing: -0.02em;
 }
 
-/* ── slider ─────────────────────────────────────────────────── */
-
 .weight-slider {
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
-  height: 20px;           /* click area */
+  height: 20px;
   background: transparent;
   cursor: pointer;
   outline: none;
@@ -44,7 +155,6 @@
   margin: 0;
 }
 
-/* track */
 .weight-slider::-webkit-slider-runnable-track {
   height: 1px;
   background: linear-gradient(
@@ -63,13 +173,9 @@
   height: 1px;
   background: #1a1a1a;
 }
-
-/* zero tick — a thin vertical line at the midpoint */
 .weight-slider::-webkit-slider-container {
   overflow: visible;
 }
-
-/* thumb */
 .weight-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 10px;
@@ -86,11 +192,5 @@
   background: #1a1a1a;
   border: none;
 }
-
-/* accent only on keyboard focus */
-.weight-slider:focus-visible::-webkit-slider-thumb {
-  background: var(--accent);
-}
-.weight-slider:focus-visible::-moz-range-thumb {
-  background: var(--accent);
-}
+.weight-slider:focus-visible::-webkit-slider-thumb { background: var(--accent); }
+.weight-slider:focus-visible::-moz-range-thumb     { background: var(--accent); }

@@ -16,6 +16,11 @@ const prototypes = [
     title: 'Decision Tree',
     description: `We present the user with a decision tree model and ask them to move decision steps around.`,
   },
+  {
+    path: '/draw-a-linear-model',
+    title: 'Draw a Linear Model',
+    description: `User is allowed to create a linear model by specifying the weight assigned to each variable.`,
+  },
 ]
 
 export default function Home() {
