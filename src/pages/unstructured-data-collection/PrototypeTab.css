@@ -1,0 +1,124 @@
+.udc-layout {
+  display: grid;
+  grid-template-columns: 280px 280px;
+  gap: 64px;
+}
+
+.udc-col {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ── button ──────────────────────────────────────────────── */
+
+.udc-btn {
+  appearance: none;
+  background: none;
+  border: 1px solid #1a1a1a;
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 400;
+  color: #1a1a1a;
+  padding: 7px 16px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+.udc-btn:hover {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+/* ── sections ────────────────────────────────────────────── */
+
+.udc-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.udc-section-label {
+  font-size: 11px;
+  font-weight: 400;
+  color: #b0b0b0;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ── patient fields ──────────────────────────────────────── */
+
+.udc-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+}
+
+.udc-field {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.udc-field dt {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.udc-field dd {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0;
+  text-align: right;
+}
+
+/* ── active button state ─────────────────────────────────── */
+
+.udc-btn--active {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+/* ── verdict row ─────────────────────────────────────────── */
+
+.udc-verdict {
+  display: flex;
+  gap: 8px;
+}
+
+/* ── reason textarea ─────────────────────────────────────── */
+
+.udc-reason {
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--text-primary);
+  border: 1px solid #d0d0d0;
+  background: none;
+  padding: 10px 12px;
+  resize: vertical;
+  width: 100%;
+  min-height: 96px;
+  outline: none;
+  box-sizing: border-box;
+  line-height: 1.6;
+}
+.udc-reason:focus {
+  border-color: #1a1a1a;
+}
+.udc-reason::placeholder {
+  color: #c8c8c8;
+}
+
+/* ── prediction ──────────────────────────────────────────── */
+
+.udc-prediction {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.udc-prediction--approved { color: #1a1a1a; }
+.udc-prediction--rejected { color: #f70505; }

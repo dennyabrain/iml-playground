@@ -1,0 +1,69 @@
+.ov-guide {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 520px;
+}
+
+.ov-intro {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── numbered steps ──────────────────────────────────────── */
+
+.ov-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  counter-reset: steps;
+}
+
+.ov-steps li {
+  counter-increment: steps;
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  column-gap: 16px;
+  row-gap: 4px;
+}
+
+.ov-steps li::before {
+  content: counter(steps);
+  font-size: 11px;
+  font-weight: 500;
+  color: #c0c0c0;
+  padding-top: 1px;
+}
+
+.ov-step-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  grid-column: 2;
+}
+
+.ov-step-desc {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  grid-column: 2;
+}
+
+/* ── closing note ────────────────────────────────────────── */
+
+.ov-note {
+  font-size: 12px;
+  font-weight: 400;
+  color: #b0b0b0;
+  border-left: 2px solid #e8e8e8;
+  padding-left: 14px;
+  margin: 0;
+  line-height: 1.7;
+}
