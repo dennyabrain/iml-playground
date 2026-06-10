@@ -21,6 +21,11 @@ const prototypes = [
     title: 'Draw a Linear Model',
     description: `User is allowed to create a linear model by specifying the weight assigned to each variable.`,
   },
+  {
+    path: '/two-stage-model',
+    title: '2 Stage Model',
+    description: `A 2 stage model that's faithful to human decision making.`,
+  },
 ]
 
 export default function Home() {
