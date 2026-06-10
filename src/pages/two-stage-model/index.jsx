@@ -1,10 +1,12 @@
 import PageLayout from '../../components/PageLayout'
 import OverviewTab from './OverviewTab'
 import PrototypeTab from './PrototypeTab'
+import PrototypeTabB from './PrototypeTabB'
 
 const tabs = [
-  { label: 'Overview',  content: <OverviewTab /> },
-  { label: 'Prototype', content: <PrototypeTab /> },
+  { label: 'Overview',    content: <OverviewTab /> },
+  { label: 'Prototype A', content: <PrototypeTab /> },
+  { label: 'Prototype B', content: <PrototypeTabB /> },
 ]
 
 export default function TwoStageModel() {

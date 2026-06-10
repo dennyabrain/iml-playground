@@ -123,7 +123,7 @@ export default function PrototypeTab() {
           {/* ── Stage 2 ── */}
           {allDone && (
             <section className="tsm-stage">
-              <span className="tsm-stage-label">Simple Tallying Rule</span>
+              <span className="tsm-stage-label">Stage 2 — Simple Tallying Rule</span>
 
               <p className="tsm-tally-result">
                 Patient <strong>{winner}</strong> was chosen more often and is selected as the better donor.
