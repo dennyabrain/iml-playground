@@ -26,6 +26,11 @@ const prototypes = [
     title: '2 Stage Model',
     description: `A 2 stage model that's faithful to human decision making.`,
   },
+  {
+    path: '/content-moderation-two-stage',
+    title: '2 Stage Model — Content Moderation',
+    description: `A 2 stage model for content moderation. Evaluate severity, targeted identity, and appropriation one parameter at a time, then get a Remove / Flag / Approve verdict via simple tallying.`,
+  },
 ]
 
 export default function Home() {
