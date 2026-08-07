@@ -1,0 +1,176 @@
+.ka-layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.ka-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ka-col-label {
+  font-size: 11px;
+  font-weight: 400;
+  color: #b0b0b0;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.ka-btn {
+  appearance: none;
+  background: none;
+  border: 1px solid #1a1a1a;
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 400;
+  color: #1a1a1a;
+  padding: 7px 16px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+.ka-btn:hover:not(:disabled) {
+  background: #1a1a1a;
+  color: #fff;
+}
+.ka-btn:disabled {
+  border-color: #d0d0d0;
+  color: #b0b0b0;
+  cursor: default;
+}
+
+.ka-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.ka-table tr {
+  border-bottom: 1px solid #f0f0f0;
+}
+.ka-table tr:first-child {
+  border-top: 1px solid #f0f0f0;
+}
+
+.ka-table-label {
+  font-size: 12px;
+  color: #888;
+  padding: 10px 0;
+  width: 55%;
+}
+
+.ka-table-input {
+  padding: 6px 0 6px 12px;
+}
+
+.ka-input {
+  width: 100%;
+  border: 1px solid #e0e0e0;
+  font-family: var(--font);
+  font-size: 12px;
+  color: #1a1a1a;
+  padding: 6px 10px;
+  outline: none;
+  background: none;
+  box-sizing: border-box;
+}
+.ka-input:focus {
+  border-color: #1a1a1a;
+}
+
+.ka-slider-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 2px 0;
+}
+
+.ka-slider-value {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a1a1a;
+  width: 28px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.ka-slider {
+  flex: 1;
+  cursor: pointer;
+  accent-color: #1a1a1a;
+  height: 2px;
+}
+
+/* ── variable picker ─────────────────────────────────────── */
+
+.ka-var-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ka-var-btn {
+  appearance: none;
+  background: none;
+  border: 1px solid #d0d0d0;
+  font-family: var(--font);
+  font-size: 12px;
+  color: #888;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+.ka-var-btn:hover:not(:disabled) {
+  border-color: #888;
+  color: #1a1a1a;
+}
+.ka-var-btn--selected {
+  border-color: #1a1a1a;
+  color: #1a1a1a;
+  background: #f5f5f5;
+}
+.ka-var-btn:disabled {
+  color: #d0d0d0;
+  border-color: #eeeeee;
+  cursor: default;
+}
+
+/* ── 2D plot ──────────────────────────────────────────────── */
+
+.ka-plot {
+  display: block;
+  user-select: none;
+  touch-action: none;
+}
+
+.ka-axis-tick {
+  font-size: 10px;
+  fill: #b0b0b0;
+  font-family: var(--font);
+}
+
+.ka-axis-label {
+  font-size: 11px;
+  fill: #888;
+  font-family: var(--font);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ka-back-btn {
+  border-color: #d0d0d0;
+  color: #888;
+}
+.ka-back-btn:hover {
+  background: #f5f5f5;
+  color: #1a1a1a;
+  border-color: #888;
+}
+
+.ka-result {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.ka-result--selected { color: #27ae60; }
+.ka-result--rejected { color: #c0392b; }

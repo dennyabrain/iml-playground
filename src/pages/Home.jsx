@@ -27,6 +27,11 @@ const prototypes = [
     description: `A 2 stage model that's faithful to human decision making.`,
   },
   {
+    path: '/kidney-allocation',
+    title: 'Model Interaction for Kidney Allocation Domain',
+    description: `A prototype that allows users to choose patient details and query a model for a response.`,
+  },
+  {
     path: '/content-moderation-two-stage',
     title: '2 Stage Model — Content Moderation',
     description: `A 2 stage model for content moderation. Evaluate severity, targeted identity, and appropriation one parameter at a time, then get a Remove / Flag / Approve verdict via simple tallying.`,

@@ -6,6 +6,7 @@ import DecisionTree from './pages/decision-tree'
 import DrawALinearModel from './pages/draw-a-linear-model'
 import TwoStageModel from './pages/two-stage-model'
 import ContentModerationTwoStageModel from './pages/content-moderation-two-stage'
+import KidneyAllocation from './pages/kidney-allocation'
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="/draw-a-linear-model" element={<DrawALinearModel />} />
         <Route path="/two-stage-model" element={<TwoStageModel />} />
         <Route path="/content-moderation-two-stage" element={<ContentModerationTwoStageModel />} />
+        <Route path="/kidney-allocation" element={<KidneyAllocation />} />
       </Routes>
     </BrowserRouter>
   )
