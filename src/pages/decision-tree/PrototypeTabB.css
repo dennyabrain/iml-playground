@@ -1,0 +1,267 @@
+.dtb-layout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  /* Break out of body's max-width: 720px. 128px = 2 × 64px body padding. */
+  width: calc(100vw - 128px);
+}
+
+/* ── Sidebar ─────────────────────────────────────────────────────────────── */
+
+.dtb-sidebar {
+  width: 190px;
+  flex-shrink: 0;
+}
+
+.dtb-palette-heading {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.dtb-palette-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 12px;
+}
+
+.dtb-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.dtb-block {
+  padding: 7px 11px;
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: grab;
+  user-select: none;
+  transition: background 0.1s;
+}
+
+.dtb-block:hover  { background: #ebebeb; }
+.dtb-block:active { cursor: grabbing; }
+
+.dtb-count {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.dtb-reset {
+  font-size: 11px;
+  color: var(--text-muted);
+  background: none;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-family: var(--font);
+}
+
+.dtb-reset:hover {
+  color: #ef4444;
+  border-color: #ef4444;
+}
+
+/* ── Canvas ──────────────────────────────────────────────────────────────── */
+
+.dtb-canvas-wrap {
+  flex: 1;
+  min-width: 0;
+  overflow: auto;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  background: #fafafa;
+  min-height: 500px;
+  max-height: 720px;
+}
+
+.dtb-canvas {
+  position: relative;
+}
+
+/* ── Root drop zone (shown when tree is empty) ───────────────────────────── */
+
+.dtb-root-zone {
+  position: absolute;
+  border: 2px dashed #d0d0d0;
+  border-radius: 8px;
+  padding: 16px 24px;
+  font-size: 12px;
+  color: var(--text-muted);
+  background: white;
+  white-space: nowrap;
+}
+
+.dtb-root-zone.dtb-zone--over {
+  border-color: #6366f1;
+  background: #f0f0ff;
+  color: #6366f1;
+}
+
+/* ── Condition nodes ─────────────────────────────────────────────────────── */
+
+.dtb-node {
+  position: absolute;
+  background: white;
+  border: 1.5px solid #d0d0d0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+  box-sizing: border-box;
+}
+
+.dtb-node-x {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #c0c0c0;
+  line-height: 1;
+  padding: 0;
+  font-family: var(--font);
+}
+
+.dtb-node-x:hover { color: #ef4444; }
+
+.dtb-node-param {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.dtb-node-cond {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dtb-op {
+  font-size: 13px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 3px 4px;
+  background: #f9f9f9;
+  font-family: var(--font);
+  cursor: pointer;
+}
+
+.dtb-val {
+  width: 72px;
+  font-size: 13px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 3px 6px;
+  font-family: var(--font);
+}
+
+/* ── Open slots ──────────────────────────────────────────────────────────── */
+
+.dtb-slot {
+  position: absolute;
+  border: 1.5px dashed #d8d8d8;
+  border-radius: 6px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-sizing: border-box;
+}
+
+.dtb-slot--yes { border-color: #86efac; }
+.dtb-slot--no  { border-color: #fca5a5; }
+
+.dtb-slot.dtb-slot--over {
+  border-color: #6366f1;
+  background: #f0f0ff;
+}
+
+.dtb-slot-drop {
+  font-size: 10px;
+  color: #c0c0c0;
+}
+
+.dtb-slot-btns {
+  display: flex;
+  gap: 4px;
+}
+
+.dtb-slot-btns button {
+  font-size: 10px;
+  padding: 2px 7px;
+  border: 1px solid #e0e0e0;
+  border-radius: 3px;
+  background: #f5f5f5;
+  cursor: pointer;
+  font-family: var(--font);
+}
+
+.dtb-slot-btns button:first-child:hover {
+  background: #dcfce7;
+  border-color: #86efac;
+  color: #166534;
+}
+
+.dtb-slot-btns button:last-child:hover {
+  background: #fee2e2;
+  border-color: #fca5a5;
+  color: #991b1b;
+}
+
+/* ── Terminal nodes ──────────────────────────────────────────────────────── */
+
+.dtb-terminal {
+  position: absolute;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+
+.dtb-terminal--a {
+  background: #dcfce7;
+  border: 1.5px solid #86efac;
+  color: #166534;
+}
+
+.dtb-terminal--b {
+  background: #fee2e2;
+  border: 1.5px solid #fca5a5;
+  color: #991b1b;
+}
+
+.dtb-term-x {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 11px;
+  color: #bbb;
+  line-height: 1;
+  padding: 0;
+  font-family: var(--font);
+}
+
+.dtb-term-x:hover { color: #ef4444; }
